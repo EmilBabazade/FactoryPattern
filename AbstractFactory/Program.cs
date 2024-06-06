@@ -1,43 +1,8 @@
 ﻿// Factory using composition
-
 var bluePhone = new Phone(new BlueCaseFactory());
 var redPhone = new Phone(new RedCaseFactory());
 var greenPhone = new Phone(new GreenCaseFactory());
 var phone = new Phone(new NoCaseFactory());
-
-public abstract class Case(string color)
-{
-    protected string _color = color;
-    public string Color { get => _color; }
-}
-
-public class BlueCase : Case
-{
-    public BlueCase() : base("blue")
-    {
-    }
-}
-
-public class RedCase : Case
-{
-    public RedCase() : base("red")
-    {
-    }
-}
-
-public class GreenCase : Case
-{
-    public GreenCase() : base("green")
-    {
-    }
-}
-
-public class NoCase : Case
-{
-    public NoCase() : base(string.Empty) 
-    { 
-    }
-}
 
 public class Phone
 {
@@ -56,28 +21,4 @@ public class Phone
         }
         //build other stuff....
     }
-}
-public interface ICaseFactory
-{
-    public Case MakeCase();
-}
-
-public class RedCaseFactory : ICaseFactory
-{
-    public Case MakeCase() => new RedCase();
-}
-
-public class BlueCaseFactory : ICaseFactory
-{
-    public Case MakeCase() => new BlueCase();
-}
-
-public class GreenCaseFactory : ICaseFactory
-{
-    public Case MakeCase() => new GreenCase();
-}
-
-public class NoCaseFactory : ICaseFactory
-{
-    public Case MakeCase() => new NoCase();
 }
