@@ -10,7 +10,7 @@ public class CarRetailer
 {
     public Car? Sell(string model)
     {
-        var car = new SimpleCarFactory().BuildCar(model);
+        var car = SimpleCarFactory.BuildCar(model);
         
         if(car == null)
         {

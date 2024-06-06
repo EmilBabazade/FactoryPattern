@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SimpleFactory;
 public class SimpleCarFactory
 {
-    public Car? BuildCar(string model)
+    public static Car? BuildCar(string model)
     {
         var validatedModel = model.ToLower();
         // other validation...
